@@ -11,7 +11,7 @@ public class Main {
 
         Student student = new Student();
         student.setId(104);
-        student.setName("nadun");
+        student.setName("Hashini");
         student.setAge(22);
 
         Configuration config = new Configuration();
@@ -27,11 +27,16 @@ public class Main {
 
         //session.persist(student);
 
-        System.out.println(session.find(Student.class,102));
+       // System.out.println(session.find(Student.class,102));
 
-        session.remove(session.find(Student.class,101));
+        //session.remove(session.find(Student.class,101));
+
+        session.merge(student);
 
         transaction.commit();
+
+        session.close();
+        factory.close();
 
 
 
