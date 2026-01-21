@@ -21,13 +21,21 @@ public class Main {
 
         Session session = factory.openSession();
 
-        session.persist(student);
+//        session.persist(student);
 
         Transaction transaction = session.beginTransaction();
 
-        session.persist(student);
+        //session.persist(student);
 
-//        transaction.commit();
+        System.out.println(session.find(Student.class,102));
+
+        session.remove(session.find(Student.class,101));
+
+        transaction.commit();
+
+
+
+
 
 
 
